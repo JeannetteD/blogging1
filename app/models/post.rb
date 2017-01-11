@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  has_many :users
-  has_many :commented_posts, through: :comments, class_name: 'Posts'
+  belongs_to :user
+  has_many :posts_with_comments, through: :comments, class_name: 'Post'
   has_many :comments
 end
